@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .noselect {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -133,6 +137,14 @@ ul li a:hover:before {
     flex-direction: column;
 }
 
+.about-child span {
+    font-size: 1.1em;
+    color: #777;
+    letter-spacing: 1px;
+    padding: 2px;
+    margin: 2px;
+}
+
 .child-center {
     align-items: center;
 }
@@ -154,6 +166,11 @@ ul li a:hover:before {
     border-bottom: 1px solid #bbb;
 }
 
+.project-uri {
+    text-decoration: none;
+    color: #000;
+}
+
 .project-thumbnail {
     display: flex;
     align-items: center;
@@ -166,6 +183,12 @@ ul li a:hover:before {
     height: 250px;
     overflow: hidden;
     border-radius: 5px;
+    opacity: 0.8;
+    transition: all 0.2s ease-in-out;
+}
+
+.project-thumbnail img:hover {
+    opacity: 1;
 }
 
 .project-title {
@@ -173,6 +196,7 @@ ul li a:hover:before {
 }
 
 .contact {
+    margin-top: 20px;
     height: 50vh;
     align-items: center;
     justify-content: center;
@@ -183,6 +207,13 @@ ul li a:hover:before {
     padding: 10px;
     border-bottom: 1px solid #bbb;
     margin-bottom: 20px;
+}
+
+.contact-item {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-content: center;
 }
 
 form {
@@ -204,7 +235,7 @@ textarea {
     padding: 10px;
     margin-top: 5px;
     font-family: 'Raleway', sans-serif;
-    transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in-out;
 }
 
 textarea {
@@ -222,11 +253,17 @@ textarea {
     padding: 10px;
     margin-top: 5px;
     font-family: 'Raleway', sans-serif;
-    transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in-out;
 }
 input:hover,
 textarea:hover,  
 .contact-button:hover {
+    border-bottom: 3px solid #777;
+}
+
+input:focus,
+textarea:focus,  
+.contact-button:focus {
     border-bottom: 3px solid #000;
 }
 
@@ -283,4 +320,66 @@ textarea:hover,
 
 .footer span {
     color: #bbb;
+}
+
+.project-language {
+    padding: 5px;
+    color: #fff;
+    float: left;
+    border-radius: 25px;
+    margin: 10px 5px 0px 00px;
+    opacity: 0.9;
+    transition: all 0.2s ease-in-out;
+}
+
+.project-language:hover {
+    opacity: 1;
+}
+
+.project-language:first-of-type {
+    margin-left: 25px;
+}
+
+.lang-php {
+    background-color: #4f5d95;
+    border: 1px solid #4f5d95;
+}
+
+.lang-php:before {
+    content: "PHP";
+}
+
+.lang-html {
+    background-color: #e34c26;
+    border: 1px solid #e34c26;
+}
+
+.lang-html:before {
+    content: "HTML";
+
+}
+
+.lang-js {
+    background-color: #f1e05a;
+    border: 1px solid #f1e05a;
+}
+
+.lang-js:before {
+    content: "JavaScipt";
+}
+
+.lang-css {
+    background-color: #563d7c;
+    border: 1px solid #563d7c;
+}
+
+.lang-css:before {
+    content: "CSS";
+}
+
+.warning {
+    padding: 10px;
+    margin: 5px;
+    background-color: #e34c26;
+    border-radius: 25px;
 }
