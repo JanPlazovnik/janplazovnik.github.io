@@ -187,6 +187,8 @@ ul li a:hover:before {
     height: 100%;
     overflow: hidden;
     border-radius: 5px;
+    object-fit: cover;
+    object-position: 50% 50%;
 }
 
 .project-title {
@@ -365,6 +367,16 @@ textarea:focus,
 .lang-css:before {
     content: "CSS";
 }
+
+.lang-csharp {
+    background-color: #4f5d95;
+    border: 1px solid #4f5d95;
+}
+
+.lang-csharp:before {
+    content: "C#";
+}
+
 
 .warning {
     padding: 10px;
