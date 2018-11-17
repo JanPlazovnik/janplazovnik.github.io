@@ -57,6 +57,10 @@ ul li {
     color: #fff;
 }
 
+.nav-logo {
+    line-height: 35px;
+}
+
 ul li a,
 .footer span {
 	font-family: 'Raleway', sans-serif;
