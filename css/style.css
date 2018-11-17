@@ -202,6 +202,7 @@ ul li a:hover:before {
 .contact-main {
     padding: 10px;
     border-bottom: 1px solid #bbb;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
