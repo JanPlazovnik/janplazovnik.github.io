@@ -45,7 +45,6 @@
             <p><i>Programmer; webdesigner</i></p>        
         </div>
     </div>
-
     <div class="section about" id="about">
         <div class="container">
             <div class="about-box">
@@ -144,6 +143,19 @@
             <li><a href="https://www.instagram.com/plazovnikjan/" target="_blank"><i class="icofont-instagram"></i></a></li>
             <li><a href="https://www.youtube.com/mrnobodyedits/" target="_blank"><i class="icofont-youtube"></i></a></li>
         </ul>
-    </div>    
+    </div> 
+    <script>
+        $(document).on('click', 'a[href^="#"]', function(e) {
+        var id = $(this).attr('href');
+        var $id = $(id);
+        if ($id.size === 0) {
+        return;
+        }
+        e.preventDefault();
+        var pos = $(id).offset().top;
+        pos = pos-80;   
+        $('body, html').animate({scrollTop: pos});
+    });
+    </script>
 </body>
 </html>
