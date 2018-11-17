@@ -1,2 +1,2 @@
 # janplazovnik.github.io
-Portfolio
+Personal portfolio @ https://www.plazovnik.si
