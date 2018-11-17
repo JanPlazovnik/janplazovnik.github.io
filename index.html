@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="sl">
 <head>
+    <!-- Meta-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta content="Jan Plazovnik" property="og:site_name">
     <meta content="Jan Plazovnik" property="og:title">
     <meta content="Programmer; webdesigner" property="og:description">
+    <!-- Icon -->
     <link rel="icon" type="image/png" sizes="32x32" href="media/favicon/favicon32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="media/favicon/favicon16.png">
     <title>Jan Plazovnik</title>
@@ -15,21 +17,22 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/flexboxgrid.min.css" rel="stylesheet">
     <link href="css/icofont.min.css" rel="stylesheet" >
-    
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="main-nav">
         <ul class="nav noselect" role="navigation">
             <li class="nav-logo"><h2>JP</h2></li>
-            <li><a href="#home">Domov</a></li>
-            <li><a href="#about">O meni</a></li>
-            <li><a href="#projects">Projekti</a></li>
-            <li><a href="#contact">Kontakt</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
 
     <div class="section intro" id="home">
-        <div class="intro-container">
+        <div class="intro-container noselect">
             <h1>Jan Plazovnik</h1>
             <p><i>Programmer; webdesigner</i></p>        
         </div>
@@ -39,12 +42,15 @@
         <div class="container">
             <div class="about-box">
                 <div class="about-child child-center">
-                    <img src="media/avatar.jpg" alt="Selfie">
+                    <img src="media/avatar.jpg" alt="User avatar">
                 </div>
                 <div class="about-child">
-                    <h4 class="about-header">O meni</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, nemo?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <h4 class="about-header">About</h4>
+                    <!--<p><i class="icofont-id"></i> Jan Plazovnik</p>
+                    <p><i class="icofont-location-pin"></i> Slovenia</p>-->
+                    <span>My name is Jan and I was born in 2000, which makes me <script>document.write((new Date()).getFullYear() - 2000);</script> years old.</span>
+                    <span>I attended primary school from 2006 to 2015 and I've been attending ERŠ ever since.</span>
+                    <span>I enjoy programming, playing video games, procrastinating and learning new things about technology and software.</span>
                 </div>
             </div>
         </div>
@@ -53,43 +59,74 @@
     <div class="section projects" id="projects">
         <div class="container">
             <div class="projects-main">
-                <h3>Projekti</h3>
+                <h3>Projects</h3>
             </div>    
             <div class="row">
                 <div class="col-xs">
-                    <div class="projects-item">
-                        <h4 class="project-title">Lorem.</h4>
-                        <div class="project-thumbnail">
-                            <img src="https://via.placeholder.com/500x250" alt="Project thumbnail">
+                    <a href="https://www.github.com/JanPlazovnik/imgshare" class="project-uri">
+                        <div class="projects-item">
+                            <h4 class="project-title">Imgix</h4>
+                            <div class="project-thumbnail">
+                                <img src="media/imgix.png" alt="Project thumbnail">
+                            </div>
                         </div>
+                    </a>
+                    <div class="languages">
+                        <div class="project-language lang-php"></div>
+                        <div class="project-language lang-html"></div>
+                        <div class="project-language lang-js"></div>
+                        <div class="project-language lang-css"></div>
                     </div>
                 </div>
                 <div class="col-xs">
-                     <div class="projects-item">
-                        <h4 class="project-title">Lorem.</h4>
-                        <div class="project-thumbnail">
-                            <img src="https://via.placeholder.com/500x250" alt="Project thumbnail">
+                    <a href="https://github.com/JanPlazovnik/Hiragana" class="project-uri">
+                        <div class="projects-item">
+                            <h4 class="project-title">Hiragana practice</h4>
+                            <div class="project-thumbnail">
+                                <img src="media/hiragana.png" alt="Project thumbnail">
+                            </div>
                         </div>
+                    </a>
+                    <div class="languages">
+                        <div class="project-language lang-html"></div>
+                        <div class="project-language lang-js"></div>
+                        <div class="project-language lang-css"></div>
                     </div>
                 </div>
             </div>     
         </div>
     </div>
     
-    <!--<div class="section contact" id="contact">
+    <div class="section contact" id="contact">
         <div class="container">
             <div class="contact-main">
-                <h3>Kontakt</h3>
+                <h3>Contact</h3>
             </div>   
+            
+            <div class="row">
+                <div class="col-xs">
+                    <div class="warning"><i class="icofont-warning"></i> <span>Contact form is currently not operational, so please use this instead.</span></div>
+                    <div class="contact-item">
+                        <p>Email: <a href="mailto:jan.plazovnik@gmail.com">jan.plazovnik@gmail.com</a></p>  
+                    </div> 
+                </div>
+                <div class="col-xs">
+                    <div class="contact-item">
+                        <form method="post" enctype="text/plain" class="contact-form">
+                            <input type="text" name="contactName" placeholder="Name">
+                            <input type="text" name="contactSurname" placeholder="Last name">
+                            <input type="email" name="contactEmail" placeholder="Email">
+                            <textarea placeholder="Message" name="contactMessage"></textarea>
+                            <button type="submit" class="contact-button">Submit</button>
+                        </form>
+                        <script>
+                            $('.contact-form').find('input, textarea, button, select').attr('disabled','disabled');
+                        </script>
+                    </div>
+                </div>
+            </div>
         </div>
-        <form method="post" action="contact.php" enctype="text/plain">
-            <input type="text" name="contactName" placeholder="Ime">
-            <input type="text" name="contactSurname" placeholder="Priimek">
-            <input type="email" name="contactEmail" placeholder="Email">
-            <textarea placeholder="Sporočilo" name="contactMessage"></textarea>
-            <button type="submit" class="contact-button">Pošlji</button>
-        </form>
-    </div>-->
+    </div>
 
     <div class="main-footer">
         <ul class="footer noselect" role="footer">
