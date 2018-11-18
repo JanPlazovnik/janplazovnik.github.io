@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sl">
+<html lang="en">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-59952977-3"></script>
@@ -29,6 +29,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
+    <a href="javascript:void(0);" class="scroll" title="Scroll to Top" style="display: none;">Top<span></span></a>
     <div class="main-nav">
         <ul class="nav noselect" role="navigation">
             <li class="nav-logo"><h2>JP</h2></li>
@@ -170,6 +171,7 @@
             <li><a href="https://www.youtube.com/mrnobodyedits/" target="_blank"><i class="icofont-youtube"></i></a></li>
         </ul>
     </div> 
+
     <script>
         $(document).on('click', 'a[href^="#"]', function(e) {
         var id = $(this).attr('href');
@@ -182,6 +184,20 @@
         pos = pos-80;   
         $('body, html').animate({scrollTop: pos});
     });
+
+    $(document).ready(function(){
+            $(window).scroll(function() {
+                if($(this).scrollTop() > 100) {
+                    $('.scroll').fadeIn();
+                }else{
+                    $('.scroll').fadeOut();
+                }
+            });
+            $('.scroll').click(function() {
+                $("html, body").animate({ scrollTop: 0 }, 600);
+                return false;
+            });
+        });
     </script>
 </body>
 </html>
