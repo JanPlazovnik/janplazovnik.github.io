@@ -27,6 +27,7 @@
     <link href="css/icofont.min.css" rel="stylesheet" >
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="scripts/jquery.inview.min.js"></script>
 </head>
 <body>
     <a href="javascript:void(0);" class="scroll" title="Scroll to Top" style="display: none;">Top<span></span></a>
@@ -35,117 +36,43 @@
             <li class="nav-logo"><h2>JP</h2></li>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="#projects">Projects</a></li>
         </ul>
     </div>
 
     <div class="section intro" id="home">
         <div class="intro-container noselect">
-            <h1>Jan Plazovnik</h1>
-            <p><i>Programmer; webdesigner</i></p>        
+            <h1 class="intro-header">Jan Plazovnik</h1>
+            <p class="intro-subtext"><i>Programmer; webdesigner</i></p>      
         </div>
     </div>
     <div class="section about" id="about">
         <div class="container">
             <div class="about-box">
                 <div class="about-child child-center">
-                    <img src="media/avatar.jpg" alt="User avatar">
+                    <img src="media/avatar.jpg" alt="User avatar" class="user-image">
                 </div>
                 <div class="about-child">
-                    <h4 class="about-header">About</h4>
-                    <span>My name is Jan and I was born in 2000, which makes me <script>document.write((new Date()).getFullYear() - 2000);</script> years old.</span>
-                    <span>I attended primary school from 2006 to 2015 and I've been attending ERŠ ever since.</span>
-                    <span>I enjoy programming, playing video games, procrastinating and learning new things about technology and software.</span>
+                    <div class="about-wrapper">
+                        <h4 class="about-header">About</h4>
+                        <p>I'm Jan and I do stuff, check out <a href="#projects" class="highlighted">my work</a> below.</p>
+                        <p>I come from Slovenia and I'm <script>document.write((new Date()).getFullYear() - 2000);</script> years old.</p>
+                        <p>My hobbies include programming, playing games and watching tv shows.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="section projects" id="projects">
-        <div class="container">
-            <div class="projects-main">
-                <h3>Projects</h3>
-            </div>    
-            <div class="row">
-                <div class="col-xs">
-                    <a href="https://www.github.com/JanPlazovnik/imgshare" class="project-uri">
-                        <div class="projects-item">
-                            <h4 class="project-title">Imgix</h4>
-                            <div class="project-thumbnail">
-                                <img src="media/imgix.png" alt="Project thumbnail">
-                            </div>
-                        </div>
-                    </a>
-                    <div class="languages">
-                        <div class="project-language lang-php"></div>
-                        <div class="project-language lang-html"></div>
-                        <div class="project-language lang-js"></div>
-                        <div class="project-language lang-css"></div>
-                    </div>
-                </div>
-                <div class="col-xs">
-                    <a href="https://github.com/JanPlazovnik/Hiragana" class="project-uri">
-                        <div class="projects-item">
-                            <h4 class="project-title">Hiragana practice</h4>
-                            <div class="project-thumbnail">
-                                <img src="media/hiragana.png" alt="Project thumbnail">
-                            </div>
-                        </div>
-                    </a>
-                    <div class="languages">
-                        <div class="project-language lang-html"></div>
-                        <div class="project-language lang-js"></div>
-                        <div class="project-language lang-css"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs">
-                    <a href="https://github.com/JanPlazovnik/PhilipsTVRemote" class="project-uri">
-                        <div class="projects-item">
-                            <h4 class="project-title">Philips TV Remote</h4>
-                            <div class="project-thumbnail">
-                                <img src="media/remote.png" alt="Project thumbnail">
-                            </div>
-                        </div>
-                    </a>
-                    <div class="languages">
-                        <div class="project-language lang-csharp"></div>
-                    </div>
-                </div>
-                <div class="col-xs">
-                    <a href="https://github.com/JanPlazovnik/WouldYouRather" class="project-uri">
-                        <div class="projects-item">
-                            <h4 class="project-title">Would You Rather</h4>
-                            <div class="project-thumbnail">
-                                <img src="media/would_you_rather.png" alt="Project thumbnail">
-                            </div>
-                        </div>
-                    </a>
-                    <div class="languages">
-                        <div class="project-language lang-csharp"></div>
-                    </div>
-                </div>
-            </div>                 
-        </div>
-    </div>
-    
     <div class="section contact" id="contact">
         <div class="container">
             <div class="contact-main">
                 <h3>Contact</h3>
             </div>   
-            
             <div class="row">
                 <div class="col-xs">
-                    <div class="warning"><i class="icofont-warning"></i> <span>Contact form is currently not operational, so please use this instead.</span></div>
                     <div class="contact-item">
-                        <p>Email: <a href="mailto:jan.plazovnik@gmail.com">jan.plazovnik@gmail.com</a></p>  
-                    </div> 
-                </div>
-                <div class="col-xs">
-                    <div class="contact-item">
+                        <div class="warning"><i class="icofont-warning"></i> <span>Contact form is currently not operational, so use this instead. <p style="margin-top: 10px">Email: <a href="mailto:jan.plazovnik@gmail.com">jan.plazovnik@gmail.com</a></p> </span></div>              
                         <form method="post" enctype="text/plain" class="contact-form">
                             <input type="text" name="contactName" placeholder="Name">
                             <input type="text" name="contactSurname" placeholder="Last name">
@@ -156,6 +83,98 @@
                         <script>
                             $('.contact-form').find('input, textarea, button, select').attr('disabled','disabled');
                         </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section projects" id="projects">
+        <div class="container">
+            <div class="projects-main">
+                <h3>Projects</h3>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <a href="https://www.github.com/JanPlazovnik/imgshare" class="project-uri" target="_blank">
+                        <div class="projects-item">
+                            <h4 class="project-title">Imgix</h4>
+                            <div class="project-thumbnail">
+                                <img src="media/imgix.png" alt="Project thumbnail">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs">
+                    <div class="projects-item-description-wrapper">
+                        <p><a href="https://wwww.github.com/JanPlazovnik/imgshare" class="highlighted" target="_blank"><strong>Imgix</strong></a> is a simple Imgur clone I made as a school project.</p>
+                        <div class="languages">
+                            <div class="project-language lang-php"></div>
+                            <div class="project-language lang-html"></div>
+                            <div class="project-language lang-js"></div>
+                            <div class="project-language lang-css"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>       
+            <div class="row">
+                <div class="col-xs">
+                   <a href="https://github.com/JanPlazovnik/Hiragana" class="project-uri" target="_blank">
+                        <div class="projects-item">
+                            <h4 class="project-title">Hiragana practice</h4>
+                            <div class="project-thumbnail">
+                                <img src="media/hiragana.png" alt="Project thumbnail">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs">
+                    <div class="projects-item-description-wrapper">
+                        <p><a href="https://github.com/JanPlazovnik/Hiragana" class="highlighted" target="_blank"><strong>Hiragana Practice</strong></a> is a quiz-like training site for learning Japanese hiragana.</p>
+                        <div class="languages">
+                            <div class="project-language lang-html"></div>
+                            <div class="project-language lang-js"></div>
+                            <div class="project-language lang-css"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <a href="https://github.com/JanPlazovnik/PhilipsTVRemote" class="project-uri" target="_blank">
+                        <div class="projects-item">
+                            <h4 class="project-title">Philips TV Remote</h4>
+                            <div class="project-thumbnail">
+                                <img src="media/remote.png" alt="Project thumbnail">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs">
+                    <div class="projects-item-description-wrapper">
+                        <p><a href="https://github.com/JanPlazovnik/PhilipsTVRemote" class="highlighted" target="_blank"><strong>Philips TV Remote</strong></a> is a C# Application for remote control of Philips Smart TVs after the year 2011.</p>
+                        <div class="languages">
+                            <div class="project-language lang-csharp"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <a href="https://github.com/JanPlazovnik/WouldYouRather" class="project-uri" target="_blank">
+                        <div class="projects-item">
+                            <h4 class="project-title">Would You Rather</h4>
+                            <div class="project-thumbnail">
+                                <img src="media/would_you_rather.png" alt="Project thumbnail">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs">
+                    <div class="projects-item-description-wrapper">
+                        <p><a href="https://github.com/JanPlazovnik/WouldYouRather" class="highlighted"><strong>Would You Rather</strong></a> is a C# Would You Rather game.</p>
+                        <div class="languages">
+                            <div class="project-language lang-csharp"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -173,31 +192,58 @@
     </div> 
 
     <script>
-        $(document).on('click', 'a[href^="#"]', function(e) {
+     $(document).on('click', 'a[href^="#"]', function(e) {
         var id = $(this).attr('href');
         var $id = $(id);
         if ($id.size === 0) {
-        return;
+            return;
         }
         e.preventDefault();
         var pos = $(id).offset().top;
-        pos = pos-80;   
+        pos = pos - 80;   
         $('body, html').animate({scrollTop: pos});
     });
 
     $(document).ready(function(){
-            $(window).scroll(function() {
-                if($(this).scrollTop() > 100) {
-                    $('.scroll').fadeIn();
-                }else{
-                    $('.scroll').fadeOut();
-                }
-            });
-            $('.scroll').click(function() {
-                $("html, body").animate({ scrollTop: 0 }, 600);
-                return false;
-            });
+        $(window).scroll(function() {
+            if($(this).scrollTop() > 100) {
+                $('.scroll').fadeIn();
+            }else{
+                $('.scroll').fadeOut();
+            }
         });
+        $('.scroll').click(function() {
+            $("html, body").animate({ scrollTop: 0 }, 600);
+            return false;
+        });
+    });
+
+    var introIsVisible = true;
+    $('.intro').on('inview', function(event, isInView) {
+        if (isInView) {
+            introIsVisible = true;
+        } else {
+            introIsVisible = false;
+        }
+    });
+
+   $('.about-child').on('inview', function(event, isInView) {
+        if (isInView) {
+            $('body').css('background-color', '#fff');
+            $('.intro').css('background-color', '#f1f1f1');
+            $('.intro-header').css('color', '#555');
+            $('.intro-subtext').css('color', '#777');
+            $('.nav').css('box-shadow', '5px 10px 20px -20px rgb(37, 37, 37)');
+            $('.user-image').css('visibility', 'initial');
+        } else if(!isInView && introIsVisible) {
+            $('body').css('background-color', '#000');
+            $('.intro').css('background-color', '#000');
+            $('.intro-header').css('color', '#fff');
+            $('.intro-subtext').css('color', '#aaa');
+            $('.nav').css('box-shadow', 'none');
+            $('.user-image').css('visibility', 'hidden');
+        }
+    });
     </script>
 </body>
 </html>
