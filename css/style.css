@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #000;
+    background-color: rgb(255, 255, 255);
     transition: all 0.3s ease-in-out;
 }
 
@@ -49,6 +49,7 @@ ul li {
     display: flex;
     width: 100%;
     padding: 0 10px;
+    box-shadow: 5px 10px 20px -20px rgb(37, 37, 37);
 }
 
 .nav a {
@@ -99,7 +100,7 @@ ul li a:hover:before {
 
 .intro {
     height: 100vh;
-    background-color: #000;
+    background-color: #f1f1f1;
     align-items: center;
     justify-content: center;
     font-family: 'Arial', sans-serif;
@@ -114,7 +115,7 @@ ul li a:hover:before {
 
 .intro-header {
     font-size: 5em;
-    color: #fff;
+    color: #555;
 }
 
 .intro .intro-container p {
@@ -226,6 +227,7 @@ ul li a:hover:before {
 
 .projects-item-description-wrapper p {
     color: #777;
+    line-height: 25px;
 }
 
 .highlighted {
@@ -473,11 +475,22 @@ textarea:focus,
         font-size: 2em !important;
     }
     .main-nav {
-        position: absolute;
-        display: none; /* Mobile users don't need the navigation, right*/
+        position: initial;
     }
     .nav {
         flex-direction: column;
+    }
+    .nav h2,
+    .nav a {
+        text-align: center;
+    }
+    .row {
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+    }
+    .footer li,
+    li {
+        padding: 0px;
     }
   }
   @media only screen and (max-width: 510px) {
@@ -505,4 +518,4 @@ textarea:focus,
     .about-child {
         padding: 10px;
     }
-  }
+}
