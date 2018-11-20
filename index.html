@@ -30,6 +30,11 @@
     <script src="scripts/jquery.inview.min.js"></script>
 </head>
 <body>
+    <!--[if lt IE 10]>
+    <div class="container" style="font-size: 3em">
+        You're using an outdated browser. <a href="http://outdatedbrowser.com/en" target="_self">Click here</a> to upgrade it.
+    </div>
+    <![endif]-->
     <a href="javascript:void(0);" class="scroll" title="Scroll to Top" style="display: none;">Top<span></span></a>
     <div class="main-nav">
         <ul class="nav noselect" role="navigation">
@@ -44,7 +49,7 @@
     <div class="section intro" id="home">
         <div class="intro-container noselect">
             <h1 class="intro-header">Jan Plazovnik</h1>
-            <p class="intro-subtext"><i>Programmer; webdesigner</i></p>      
+            <p class="intro-subtext"><i>Programmer; webdesigner</i></p>
         </div>
     </div>
     <div class="section about" id="about">
@@ -192,7 +197,7 @@
     </div> 
 
     <script>
-     $(document).on('click', 'a[href^="#"]', function(e) {
+    $(document).on('click', 'a[href^="#"]', function(e) {
         var id = $(this).attr('href');
         var $id = $(id);
         if ($id.size === 0) {
@@ -204,11 +209,11 @@
         $('body, html').animate({scrollTop: pos});
     });
 
-    $(document).ready(function(){
+    $(document).ready(function() {
         $(window).scroll(function() {
-            if($(this).scrollTop() > 100) {
+            if ($(this).scrollTop() > 100) {
                 $('.scroll').fadeIn();
-            }else{
+            } else {
                 $('.scroll').fadeOut();
             }
         });
