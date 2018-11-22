@@ -521,6 +521,25 @@ textarea:focus,
     .intro-header {
         font-size: 4.5em;
     }
+	
+    .main-nav {
+        position: initial;
+    }
+    .nav {
+        flex-direction: column;
+    }
+    .nav h2,
+    .nav a {
+        text-align: center;
+    }
+    .row {
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+    }
+    .footer li,
+    li {
+        padding: 0px;
+    }	  
   }
   @media only screen and (max-width: 769px) {
     .about-child {
