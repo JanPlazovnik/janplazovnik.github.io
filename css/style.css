@@ -380,10 +380,6 @@ textarea:focus,
     transition: all 0.2s ease-in-out;
 }
 
-.project-language:first-of-type {
-    margin-left: 25px;
-}
-
 .lang-php {
     background-color: #4f5d95;
     border: 1px solid #4f5d95;
