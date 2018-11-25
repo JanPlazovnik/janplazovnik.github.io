@@ -11,6 +11,25 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
+.outdatedbrowser {
+    background-color: rgb(230, 94, 94);
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.5em;
+    text-align: center;
+    font-family: 'Tahoma', sans-serif;
+}
+
+.outdatedbrowser a {
+    color: rgb(87, 87, 87);;
+    transition: 0.3s ease-in-out;
+}
+
+.outdatedbrowser a:hover {
+    color: rgb(0, 0, 0);
+}
+
 .noselect {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
