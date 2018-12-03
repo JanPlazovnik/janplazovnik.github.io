@@ -392,7 +392,7 @@ textarea:focus,
 
 .project-language {
     padding: 5px;
-    color: #fff;
+    font-size: 2em;
     float: left;
     border-radius: 25px;
     margin: 10px 5px 0px 00px;
@@ -400,51 +400,28 @@ textarea:focus,
 }
 
 .lang-php {
-    background-color: #4f5d95;
-    border: 1px solid #4f5d95;
-}
-
-.lang-php:before {
-    content: "PHP";
+    color: #4f5d95;
 }
 
 .lang-html {
-    background-color: #e34c26;
-    border: 1px solid #e34c26;
-}
-
-.lang-html:before {
-    content: "HTML";
-
+    color: #e34c26;
 }
 
 .lang-js {
-    background-color: #f1e05a;
-    border: 1px solid #f1e05a;
-}
-
-.lang-js:before {
-    content: "JavaScipt";
+    color: #f1e05a;
 }
 
 .lang-css {
-    background-color: #563d7c;
-    border: 1px solid #563d7c;
+    color: #563d7c;
 }
-
-.lang-css:before {
-    content: "CSS";
-}
-
 .lang-csharp {
-    background-color: #4f5d95;
-    border: 1px solid #4f5d95;
+    color: #4f5d95;
 }
 
-.lang-csharp:before {
-    content: "C#";
+.lang-csharp img {
+    display: inline;
+    max-width: 35px;
 }
-
 
 .warning {
     padding: 10px;
