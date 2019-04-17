@@ -776,7 +776,7 @@ img.project-image {
 
 /* MEDIA QUERIES */
 
-@media only screen and (max-width: 480px) {
+@media (max-width: 480px) {
     .landing h1 {
         font-size: 2em;
     }
@@ -790,7 +790,7 @@ img.project-image {
         position: initial;
     }
 }
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .navigation ul,
     .socials ul {
         justify-content: center;
@@ -814,7 +814,7 @@ img.project-image {
         width: 100%;
     }
 }
-@media only screen and (max-width: 1240px) {
+@media (max-width: 1240px) {
     .card-row,
     .fw-section,
     .about{
