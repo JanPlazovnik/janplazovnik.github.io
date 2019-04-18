@@ -362,7 +362,7 @@
                         if (target.length) {
                             event.preventDefault();
                             $('html, body').animate({
-                                scrollTop: target.offset().top - (($(window).width() > 480) ? ($('nav').height() + 2) : 0)
+                                scrollTop: target.offset().top - (($(window).width() > 480) ? ($('nav').height()) : 0)
                             }, 800);
                         }
                     }
