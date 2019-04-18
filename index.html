@@ -137,64 +137,33 @@
     <div id="projects" class="fw-section bg-white noselect">
         <div class="container">
             <h1 class="projects-title">My projects</h1>
-            <div class="card-row">
-                <div class="card col-2 project">
-                    <div class="project-overlay"></div>
-                    <img src="media/project_hiragana.png" alt="Project" class="project-image">
-                    <div class="project-details fadeIn-bottom">
-                        <h3 class="project-title">Hiragana Practice</h3>
+            <div class="card-row" v-for="(pp, index) in projects">
+                <div v-for="(project, index2) in pp"
+                    @click="projectClick(project, index, index2)"
+                    :class="[getProjectClass(project, index, index2)]"
+                    >
+                    <div v-if="project.expanded" class="js-project-view">
+                        <div class="js-project-view-title">
+                            <a :href="project.url" target="blank">
+                                {{project.name}}
+                            </a>
+                        </div>
+                        <div class="js-project-view-description" v-html="project.description">
+                        </div>
+                        <div class="js-project-view-tools">
+                            <i :class="'devicon-' + tool + '-plain'" v-for="tool in project.tools"></i>
+                        </div>
+                        <div v-if="project.unfinished" class="js-project-view-warning">Unfinished</div>
                     </div>
-                </div>
-                <div class="card col-2 project">
-                    <div class="project-overlay"></div>
-                    <img src="media/project_nodestories.png" alt="Project" class="project-image">
-                    <div class="project-details fadeIn-bottom">
-                        <h3 class="project-title">Node Stories</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="card-row">
-                <div class="card col-2 project">
-                    <div class="project-overlay"></div>
-                    <img src="media/project_simulator.png" alt="Project" class="project-image">
-                    <div class="project-details fadeIn-bottom">
-                        <h3 class="project-title">Simulator site</h3>
-                    </div>
-                </div>
-                <div class="card col-2 project">
-                    <div class="project-overlay"></div>
-                    <img src="media/project_imgshare.png" alt="Project" class="project-image">
-                    <div class="project-details fadeIn-bottom">
-                        <h3 class="project-title">Imgix</h3>
+                    <div v-if="!project.expanded">
+                        <div class="project-overlay"></div>
+                        <img :src="project.image" alt="Project" class="project-image">
+                        <div class="project-details fadeIn-bottom">
+                            <h3 class="project-title">{{project.name}}</h3>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="card-row">
-                <div class="card col-2 project">
-                    <div class="project-overlay"></div>
-                    <img src="media/project_wyr.png" style="transform: scale(1.01);" alt="Project"
-                        class="project-image">
-                    <div class="project-details fadeIn-bottom">
-                        <h3 class="project-title">Would You Rather</h3>
-                    </div>
-                </div>
-                <!-- <div class="card col-2 project">
-                    <div class="project-overlay"></div>
-                    <img src=https://picsum.photos/200/300/?random" alt="Project" class="project-image">
-                    <div class="project-details fadeIn-bottom">
-                        <h3 class="project-title">Project</h3>
-                    </div>
-                </div> -->
-            </div>
-            <!-- <div class="card-row">
-                <div class="card col-2 project">
-                    <div class="project-overlay"></div>
-                    <img src=https://picsum.photos/200/300/?random" alt="Project" class="project-image">
-                    <div class="project-details fadeIn-bottom">
-                        <h3 class="project-title">Project</h3>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
 
@@ -246,105 +215,75 @@
     <div id="fade" style="display: none">
     </div>
     <!-- <div class="dots-loader"></div> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <script>
+var app = new Vue({
+    el: '#projects',
+    data() {
+        return {
+            projects: [[{
+                name: "Hiragana Practice",
+                description: "A quiz-like training site for learning Japanese hiragana.",
+                tools: ['html5', 'css3', 'javascript'],
+                url: "https://github.com/JanPlazovnik/Hiragana",
+                image: 'media/project_hiragana.png',
+            },
+            {
+                name: "Node Stories",
+                description: "A site where users can share stories about places they've been to.",
+                tools: ['html5', 'css3', 'bootstrap', 'javascript', 'nodejs'],
+                url: "https://github.com/JanPlazovnik/node-stories",
+                image: 'media/project_nodestories.png',
+            }],
+            [{
+                name: "Simulator Site",
+                description: "A presentation site for a driving simulator.",
+                tools: ['html5', 'css3', 'bootstrap', 'javascript', 'nodejs'],
+                url: "https://github.com/JanPlazovnik/simulator",
+                unfinished: true,
+                image: 'media/project_simulator.png',
+            },
+            {
+                name: "Imgix",
+                description: "A simple Imgur clone made as a school project.",
+                tools: ['html5', 'css3', 'javascript', 'php'],
+                url: "https://github.com/JanPlazovnik/imgshare",
+                image: 'media/project_imgshare.png',
+            }],
+            [{
+                name: "Would You Rather",
+                description: "A C# Would You Rather game.",
+                tools: ['csharp'],
+                url: "https://github.com/JanPlazovnik/WouldYouRather",
+                image: 'media/project_wyr.png',
+            }]]
+        };
+    },
+    methods: {
+        getProjectClass(project, index, index2) {
+            let otherProject = this.projects[index][1 - index2];
+            if(window.innerWidth > 768) {
+                if (otherProject && otherProject.expanded && project.expanded) {
+                    otherProject.expanded = false;
+                }
+                if (otherProject && otherProject.expanded) {
+                    return 'card project js-col-0';
+                }
+                if (project.expanded) {
+                    return 'card project col-1';
+                }
+            }
+            return 'card project col-2';
+        },
+        projectClick(project) {
+            project.expanded = !project.expanded;
+            // idk why this is necessary, usually vue knows when to re-render. oh well.
+            this.$forceUpdate();
+        }
+    },
+});
+// all of this jquery code should be rewritten to non-jquery cause fuck jquery but i don't have that much free time, sorry.
         $(window).on('load', () => {
-            let originalHTML = [];
-            $('.project').each((i) => {
-                originalHTML.push($($('.project').get(i)).html());
-            });
-            let projects = {
-                info: [
-                    {
-                        name: "Hiragana Practice",
-                        description: "A quiz-like training site for learning Japanese hiragana.",
-                        tools: "<i class='devicon-html5-plain'></i><i class='devicon-css3-plain'></i><i class='devicon-javascript-plain'></i>",
-                        url: "https://github.com/JanPlazovnik/Hiragana"
-                    },
-                    {
-                        name: "Node Stories",
-                        description: "A site where users can share stories about places they've been to.",
-                        tools: "<i class='devicon-html5-plain'></i><i class='devicon-css3-plain'></i><i class='devicon-bootstrap-plain'></i><i class='devicon-javascript-plain'></i><i class='devicon-nodejs-plain'></i>",
-                        url: "https://github.com/JanPlazovnik/node-stories"
-                    },
-                    {
-                        name: "Simulator Site",
-                        description: "A presentation site for a driving simulator.",
-                        tools: "<i class='devicon-html5-plain'></i><i class='devicon-css3-plain'></i><i class='devicon-bootstrap-plain'></i><i class='devicon-javascript-plain'></i><i class='devicon-nodejs-plain'></i>",
-                        url: "https://github.com/JanPlazovnik/simulator",
-                        unfinished: true
-                        
-                    },
-                    {
-                        name: "Imgix",
-                        description: "A simple Imgur clone made as a school project.",
-                        tools: "<i class='devicon-html5-plain'></i><i class='devicon-css3-plain'></i><i class='devicon-javascript-plain'></i><i class='devicon-php-plain'></i>",
-                        url: "https://github.com/JanPlazovnik/imgshare"
-                    },
-                    {
-                        name: "Would You Rather",
-                        description: "A C# Would You Rather game.",
-                        tools: "<i class='devicon-csharp-plain'></i>",
-                        url: "https://github.com/JanPlazovnik/WouldYouRather"
-                    },
-                    {
-                        name: "dummy",
-                        description: "dummy desc",
-                        tools: "",
-                        url: ""
-                    },
-                    {
-                        name: "dummy",
-                        description: "dummy desc",
-                        tools: "",
-                        url: ""
-                    }
-                ]
-            };
-
-            $('.project').on('click', async function (event) {
-                let curIndex = $('.project').index($(this));
-                let proj = projects.info[curIndex];
-                if (proj.expanding) {
-                    return;
-                }
-                proj.expanding = true;
-                setTimeout(() => proj.expanding = false, 300);
-                if (!$(this).hasClass('expanded')) {
-                    console.log(JSON.stringify(proj));
-                    newhtml = `
-                        <div class="js-project-view">
-                            <div class="js-project-view-title">
-                                <a href="${proj.url}" target="blank">
-                                    ${proj.name}
-                                </a>
-                            </div>
-                            <div class="js-project-view-description">
-                                ${proj.description}
-                            </div>
-                            <div class="js-project-view-tools">
-                                    ${proj.tools}
-                            </div>
-                        </div>
-                    `;
-                    $(this).html(newhtml);
-                    if(proj.unfinished)
-                        $(this).find('.js-project-view-tools').after('<div class="js-project-view-warning">Unfinished</div>');
-                }
-                else {
-                    setTimeout(() => {
-                        $(this).html(originalHTML[curIndex]);
-                        $(this).removeClass("unfinished");
-                    }, ($(window).width() > 768) ? 300 : 0);
-                }
-                if($(window).width() > 768) {
-                    if ($(this).prev().index() % 2 == 0)
-                        $(this).prev().toggleClass('col-2 js-col-0');
-                    else
-                        $(this).next().toggleClass('col-2 js-col-0');
-                }
-                $(this).toggleClass('col-2 col-1 expanded');
-            });
-
             /* everything under here is stolen from codepen */
 
             $('a[href*="#"]')
