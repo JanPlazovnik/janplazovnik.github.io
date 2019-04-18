@@ -364,7 +364,8 @@ nav {
 .card:nth-child(even) {margin: 10px 0 10px 10px} */
 
 .card:hover {
-    box-shadow: 0 23px 40px rgba(0, 0, 0, 0.2);
+    	box-shadow: 0 23px 40px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
 }
 
 .js-col-0 {
@@ -729,7 +730,8 @@ img.project-image {
     align-items: center;
     flex-direction: column;
     height: 250px;
-    transition: 300ms all ease-in-out;   
+    transition: 300ms all ease-in-out;
+	cursor: default;
 }
 
 .js-project-view-title {
