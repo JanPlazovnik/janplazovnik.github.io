@@ -211,81 +211,80 @@
         </div>
     </div>
     </div>
-    <!-- ! Project Views -->
-    <div id="fade" style="display: none">
-    </div>
-    <!-- <div class="dots-loader"></div> -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <script>
-var app = new Vue({
-    el: '#projects',
-    data() {
-        return {
-            projects: [[{
-                name: "Hiragana Practice",
-                description: "A quiz-like training site for learning Japanese hiragana.",
-                tools: ['html5', 'css3', 'javascript'],
-                url: "https://github.com/JanPlazovnik/Hiragana",
-                image: 'media/project_hiragana.png',
-            },
-            {
-                name: "Node Stories",
-                description: "A site where users can share stories about places they've been to.",
-                tools: ['html5', 'css3', 'bootstrap', 'javascript', 'nodejs'],
-                url: "https://github.com/JanPlazovnik/node-stories",
-                image: 'media/project_nodestories.png',
-            }],
-            [{
-                name: "Simulator Site",
-                description: "A presentation site for a driving simulator.",
-                tools: ['html5', 'css3', 'bootstrap', 'javascript', 'nodejs'],
-                url: "https://github.com/JanPlazovnik/simulator",
-                unfinished: true,
-                image: 'media/project_simulator.png',
-            },
-            {
-                name: "Imgix",
-                description: "A simple Imgur clone made as a school project.",
-                tools: ['html5', 'css3', 'javascript', 'php'],
-                url: "https://github.com/JanPlazovnik/imgshare",
-                image: 'media/project_imgshare.png',
-            }],
-            [{
-                name: "Would You Rather",
-                description: "A C# Would You Rather game.",
-                tools: ['csharp'],
-                url: "https://github.com/JanPlazovnik/WouldYouRather",
-                image: 'media/project_wyr.png',
-            }]]
-        };
-    },
-    methods: {
-        getProjectClass(project, index, index2) {
-            let otherProject = this.projects[index][1 - index2];
-            if(window.innerWidth > 768) {
-                if (otherProject && otherProject.expanded && project.expanded) {
-                    otherProject.expanded = false;
-                }
-                if (otherProject && otherProject.expanded) {
-                    return 'card project js-col-0';
-                }
-                if (project.expanded) {
-                    return 'card project col-1';
-                }
-            }
-            return 'card project col-2';
+    var app = new Vue({
+        el: '#projects',
+        data() {
+            return {
+                projects: [[{
+                    name: "Hiragana Practice",
+                    description: "A quiz-like training site for learning Japanese hiragana.",
+                    tools: ['html5', 'css3', 'javascript'],
+                    url: "https://github.com/JanPlazovnik/Hiragana",
+                    image: 'media/project_hiragana.png',
+                },
+                {
+                    name: "Global News Feed",
+                    description: "A site for viewing the latest top news from around the world.",
+                    tools: ['html5', 'css3', 'javascript', 'nodejs'],
+                    url: "https://github.com/JanPlazovnik/globalnewsfeed",
+                    image: 'media/project_news.png',
+                },
+                {
+                    name: "Node Stories",
+                    description: "A site where users can share stories about places they've been to.",
+                    tools: ['html5', 'css3', 'bootstrap', 'javascript', 'nodejs'],
+                    url: "https://github.com/JanPlazovnik/node-stories",
+                    image: 'media/project_nodestories.png',
+                }],
+                [{
+                    name: "Simulator Site",
+                    description: "A presentation site for a driving simulator.",
+                    tools: ['html5', 'css3', 'bootstrap', 'javascript', 'nodejs'],
+                    url: "https://github.com/JanPlazovnik/simulator",
+                    unfinished: true,
+                    image: 'media/project_simulator.png',
+                },
+                {
+                    name: "Imgix",
+                    description: "A simple Imgur clone made as a school project.",
+                    tools: ['html5', 'css3', 'javascript', 'php'],
+                    url: "https://github.com/JanPlazovnik/imgshare",
+                    image: 'media/project_imgshare.png',
+                }],
+                [{
+                    name: "Would You Rather",
+                    description: "A C# Would You Rather game.",
+                    tools: ['csharp'],
+                    url: "https://github.com/JanPlazovnik/WouldYouRather",
+                    image: 'media/project_wyr.png',
+                }]]
+            };
         },
-        projectClick(project) {
-            project.expanded = !project.expanded;
-            // idk why this is necessary, usually vue knows when to re-render. oh well.
-            this.$forceUpdate();
-        }
-    },
-});
-// all of this jquery code should be rewritten to non-jquery cause fuck jquery but i don't have that much free time, sorry.
+        methods: {
+            getProjectClass(project, index, index2) {
+                let otherProject = this.projects[index][1 - index2];
+                if(window.innerWidth > 768) {
+                    if (otherProject && otherProject.expanded && project.expanded) {
+                        otherProject.expanded = false;
+                    }
+                    if (otherProject && otherProject.expanded) {
+                        return 'card project js-col-0';
+                    }
+                    if (project.expanded) {
+                        return 'card project col-1';
+                    }
+                }
+                return 'card project col-2';
+            },
+            projectClick(project) {
+                project.expanded = !project.expanded;
+                this.$forceUpdate();
+            }
+        },
+    });
         $(window).on('load', () => {
-            /* everything under here is stolen from codepen */
-
             $('a[href*="#"]')
                 .not('[href="#"]')
                 .not('[href="#0"]')
