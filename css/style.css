@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 @import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Rubik');
 
 * {
     margin: 0;
@@ -9,7 +10,7 @@
 }
 
 body {
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Rubik', 'Open Sans', sans-serif;
     background-color: #f1f1f1;
 }
 
