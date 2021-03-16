@@ -1,56 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 * {
-  box-sizing: border-box;
   margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #010112;
+  color: #d4d6f1;
+  font-family: 'PT Sans', sans-serif;
+  overflow: hidden;
 }
 
 .container {
-  display: grid;
-  place-items: center;
+  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.progress-bar {
+  position: fixed;
+  height: 5px;
+  width: 100%;
+  background-color: #0CF574;
+}
+
+.page {
+  margin: 0 auto;
+  max-width: 960px;
+  width: 100%;
+}
+
+.full {
   height: 100vh;
-  background: linear-gradient(-45deg, #f5f5f7 20px, transparent 1%), #fcfcfd;
-  background-size: 55px 55px;
 }
 
-.construction-wrapper {
-  max-width: 425px;
-  text-align: center;
-  /* background-color: #fff; */
-  /* border-radius: 4px; */
-  /* box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); */
-  padding: 10px;
-  width: 100%;
+#header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.construction-wrapper .header {
-  background-image: url(/assets/img/header.png);
-  height: 40px;
-  width: 100%;
-  background-position: center;
-  background-size: cover;
-  margin-bottom: 20px;
-}
-/* 
-.construction-wrapper p:first-of-type {
-  color: hsl(216, 10%, 28%);
-  font-size: 1.4rem;
-  font-weight: 500;
-  margin-bottom: 15px;
-} */
-
-.construction-wrapper p {
-  font-size: 1.3rem;
-  color: hsl(216, 29%, 75%);
-  letter-spacing: 0.015rem;
+#header .title {
+  color: hsl(191, 52%, 96%);
+  font-size: 6rem;
+  font-weight: bold;
+  /* text-indent: .4rem; */
 }
 
-.construction-wrapper a {
-  color: hsl(216, 13%, 58%);
+#header .subtitle {
+  color: hsl(190, 5%, 55%);
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-indent: .28rem;
+}
+
+#header .subtitle a {
+  color: hsl(191, 52%, 96%);
   text-decoration: none;
 }
 
-.construction-wrapper a:hover {
-  border-bottom: 1px solid hsl(214, 4%, 39%);
+#header .subtitle a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+  .page {
+    padding: 5px;
+  }
+  #header .title {
+    transition: font-size .15s ease-out;
+    font-size: 5.5rem;
+  }
+  #header .subtitle {
+    transition: text-indent .15s ease-out;
+    text-indent: 0;
+  }
 }
